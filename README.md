@@ -1,1 +1,4 @@
-> ![Hotel Erd](hotel_erd.png)
+**Hotel ERD**
+---
+
+![Hotel Erd](hotel_erd.png)
