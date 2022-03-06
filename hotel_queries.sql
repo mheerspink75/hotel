@@ -41,8 +41,8 @@ FROM   reservation
                ON guest.guestid = reservation.guestid
        INNER JOIN room
                ON room.roomid = reservation.roomid
-		INNER JOIN roomtype
-			   ON roomtype.roomtypeid = room.roomid
+       INNER JOIN roomtype
+	       ON roomtype.roomtypeid = room.roomid
 WHERE  firstname = 'Mack'
        AND lastname = 'Simmer';
 
