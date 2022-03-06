@@ -1,7 +1,7 @@
 USE hoteldb;
 
 INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phone) values 
-    (1, 'Matt', 'Heerspink', '3113 Parker Annex Rd', 'Jonesboro', 'AR', 72401, '(517) 414-9194'),
+	(1, 'Matt', 'Heerspink', '3113 Parker Annex Rd', 'Jonesboro', 'AR', 72401, '(517) 414-9194'),
 	(2, 'Mack', 'Simmer', '379 Old Shore Street', 'Council Bluffs', 'IA', 51501, '(291) 553-0508'),
 	(3, 'Bettyann', 'Seery', '750 Wintergreen Dr.', 'Wasilla', 'AK', 99654, '(478) 277-9632'),
 	(4, 'Duane', 'Cullison', '9662 Foxrun Lane', 'Harlingen', 'TX', 78552, '(308) 494-0198'),
