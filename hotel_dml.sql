@@ -56,26 +56,26 @@ INSERT INTO Room (RoomID, RoomTypeID, RoomNumber, ADA_Accessable) values
 	(17, 17, 401, 'Yes'),
 	(18, 18, 402, 'Yes');
  
-
-INSERT INTO Amenity (AmenityID, RoomTypeID, RoomID, Microwave, Jacuzzi, Refrigerator, Oven) values 
-	(1, 1, 1, 'True', 'True', 'False', 'False'),
-	(2, 2, 2, 'False', 'False', 'True', 'False'),
-	(3, 3, 3, 'True', 'True', 'False', 'False'),
-	(4, 4, 4, 'False', 'False', 'True', 'False'),
-	(5, 5, 5, 'True', 'True', 'True', 'False'),
-	(6, 6, 6, 'True', 'True', 'False', 'False'),
-	(7, 7, 7, 'True', 'False', 'True', 'False'),
-	(8, 8, 8, 'True', 'True', 'False', 'False'),
-	(9, 9, 9, 'False', 'False', 'True', 'False'),
-	(10, 10, 10, 'True', 'True', 'False', 'False'),
-	(11, 11, 11, 'False', 'False', 'True', 'False'),
-	(12, 12, 12, 'False', 'False', 'True', 'False'),
-	(13, 13, 13, 'True', 'True', 'True', 'False'),
-	(14, 14, 14, 'True', 'False', 'True', 'False'),
-	(15, 15, 15, 'True', 'True', 'True', 'False'),
-	(16, 16, 16, 'True', 'False', 'True', 'False'),
-	(17, 17, 17, 'True', 'False', 'True', 'True'),
-	(18, 18, 18, 'True', 'False', 'True', 'True');
+ 
+    INSERT INTO Amenity (AmenityID, RoomTypeID, Microwave, Jacuzzi, Refrigerator, Oven) values 
+	(1, 1, 'True', 'True', 'False', 'False'),
+	(2, 2, 'False', 'False', 'True', 'False'),
+	(3, 3, 'True', 'True', 'False', 'False'),
+	(4, 4, 'False', 'False', 'True', 'False'),
+	(5, 5, 'True', 'True', 'True', 'False'),
+	(6, 6, 'True', 'True', 'False', 'False'),
+	(7, 7, 'True', 'False', 'True', 'False'),
+	(8, 8, 'True', 'True', 'False', 'False'),
+	(9, 9, 'False', 'False', 'True', 'False'),
+	(10, 10, 'True', 'True', 'False', 'False'),
+	(11, 11, 'False', 'False', 'True', 'False'),
+	(12, 12, 'False', 'False', 'True', 'False'),
+	(13, 13, 'True', 'True', 'True', 'False'),
+	(14, 14, 'True', 'False', 'True', 'False'),
+	(15, 15, 'True', 'True', 'True', 'False'),
+	(16, 16, 'True', 'False', 'True', 'False'),
+	(17, 17, 'True', 'False', 'True', 'True'),
+	(18, 18, 'True', 'False', 'True', 'True');
 
 
 INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, StartDate, EndDate, TotalCost) values
