@@ -18,12 +18,12 @@ PRIMARY KEY (GuestID)
 
 -- 2. RoomType Table
 CREATE TABLE RoomType (
-RoomTypeID INT NOT NULL,
+RoomTypeID INT AUTO_INCREMENT NOT NULL,
 `Type` VARCHAR(25) NOT NULL,
 StandardOccupancy INT NOT NULL,
 MaximumOccupancy INT NOT NULL,
 BasePrice DECIMAL(5,2) NOT NULL,
-ExtraPerson ENUM('10', '20', 'NA'),
+ExtraPerson ENUM('10', '20', 'NA') NOT NULL,
 PRIMARY KEY (RoomTypeID)
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE Room (
 RoomID INT AUTO_INCREMENT NOT NULL,
 RoomTypeID INT NOT NULL,
 RoomNumber INT NOT NULL,
-ADA_Accessable ENUM('YES','NO'),
+ADA_Accessable ENUM('YES','NO') NOT NULL,
 PRIMARY KEY (RoomID),
 FOREIGN KEY (RoomTypeID) REFERENCES RoomType (RoomTypeID)
 );
