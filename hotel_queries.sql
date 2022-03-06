@@ -21,7 +21,7 @@ SELECT firstname,
        jacuzzi
 FROM   reservation
        INNER JOIN amenity
-               ON amenity.roomid = reservation.roomid
+               ON amenity.roomtypeid = reservation.roomid
        INNER JOIN room
                ON room.roomid = reservation.reservationid
        INNER JOIN guest
@@ -41,6 +41,8 @@ FROM   reservation
                ON guest.guestid = reservation.guestid
        INNER JOIN room
                ON room.roomid = reservation.roomid
+		INNER JOIN roomtype
+			   ON roomtype.roomtypeid = room.roomid
 WHERE  firstname = 'Mack'
        AND lastname = 'Simmer';
 
