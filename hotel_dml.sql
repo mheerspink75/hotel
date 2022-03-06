@@ -1,18 +1,18 @@
 USE hoteldb;
 
-INSERT INTO Guest (GuestID, `Name`, Address, City, State, Zip, Phone) values 
-	(1, 'Matt Heerspink', '3113 Parker Annex Rd', 'Jonesboro', 'AR', 72401, '(517) 414-9194'),
-	(2, 'Mack Simmer', '379 Old Shore Street', 'Council Bluffs', 'IA', 51501, '(291) 553-0508'),
-	(3, 'Bettyann Seery', '750 Wintergreen Dr.', 'Wasilla', 'AK', 99654, '(478) 277-9632'),
-	(4, 'Duane Cullison', '9662 Foxrun Lane', 'Harlingen', 'TX', 78552, '(308) 494-0198'),
-	(5, 'Karie Yang', '9378 W. Augusta Ave.', 'West Deptford', 'NJ', 08096, '(214) 730-0298'),
-	(6, 'Aurore Lipton', '762 Wild Rose Street', 'Saginaw', 'MI', 48601, '(377) 507-0974'),
-	(7, 'Zachery Luechtefeld', '7 Poplar Dr.', 'Arvada', 'CO', 80003, '(814) 485-2615'),
-	(8, 'Jeremiah Pendergrass', '70 Oakwood St.', 'Zion', 'IL', 60099, '(279) 491-0960'),
-	(9, 'Walter Holaway', '7556 Arrowhead St.', 'Cumberland', 'RI', 02864, '(446) 396-6785'),
-	(10, 'Wilfred Vise', '77 West Surrey Street', 'Oswego', 'NY', 13126, '(834) 727-1001'),
-	(11, 'Maritza Tilton', '939 Linda Rd.', 'Burke', 'VA', 	22015, '(446) 351-6860'),
-	(12, 'Joleen Tison', '87 Queen St.', 'Drexel Hill', 'PA', 19026, '(231) 893-2755');
+INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phone) values 
+    (1, 'Matt', 'Heerspink', '3113 Parker Annex Rd', 'Jonesboro', 'AR', 72401, '(517) 414-9194'),
+	(2, 'Mack', 'Simmer', '379 Old Shore Street', 'Council Bluffs', 'IA', 51501, '(291) 553-0508'),
+	(3, 'Bettyann', 'Seery', '750 Wintergreen Dr.', 'Wasilla', 'AK', 99654, '(478) 277-9632'),
+	(4, 'Duane', 'Cullison', '9662 Foxrun Lane', 'Harlingen', 'TX', 78552, '(308) 494-0198'),
+	(5, 'Karie', 'Yang', '9378 W. Augusta Ave.', 'West Deptford', 'NJ', 08096, '(214) 730-0298'),
+	(6, 'Aurore', 'Lipton', '762 Wild Rose Street', 'Saginaw', 'MI', 48601, '(377) 507-0974'),
+	(7, 'Zachery', 'Luechtefeld', '7 Poplar Dr.', 'Arvada', 'CO', 80003, '(814) 485-2615'),
+	(8, 'Jeremiah', 'Pendergrass', '70 Oakwood St.', 'Zion', 'IL', 60099, '(279) 491-0960'),
+	(9, 'Walter', 'Holaway', '7556 Arrowhead St.', 'Cumberland', 'RI', 02864, '(446) 396-6785'),
+	(10, 'Wilfred', 'Vise', '77 West Surrey Street', 'Oswego', 'NY', 13126, '(834) 727-1001'),
+	(11, 'Maritza', 'Tilton', '939 Linda Rd.', 'Burke', 'VA', 	22015, '(446) 351-6860'),
+	(12, 'Joleen', 'Tison', '87 Queen St.', 'Drexel Hill', 'PA', 19026, '(231) 893-2755');
 
 
 INSERT INTO RoomType (RoomTypeID, `Type`, StandardOccupancy, MaximumOccupancy, BasePrice, ExtraPerson) values 
