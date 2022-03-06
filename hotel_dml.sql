@@ -1,5 +1,10 @@
 USE hoteldb;
 
+-- First, using the data provided in the tables above, create the required SQL statements to populate the tables with the data above.
+-- Include your name, address, and phone number in the first record of the table for guests. You may use a fictitious address and phone number, as long as you use your own name.
+-- As with the tables, add data to the primary tables before adding data to the tables with foreign keys.
+
+-- Insert Into Guest Table
 INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phone) values 
 	(1, 'Matt', 'Heerspink', '3113 Parker Annex Rd', 'Jonesboro', 'AR', 72401, '(517) 414-9194'),
 	(2, 'Mack', 'Simmer', '379 Old Shore Street', 'Council Bluffs', 'IA', 51501, '(291) 553-0508'),
@@ -14,7 +19,7 @@ INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phon
 	(11, 'Maritza', 'Tilton', '939 Linda Rd.', 'Burke', 'VA', 	22015, '(446) 351-6860'),
 	(12, 'Joleen', 'Tison', '87 Queen St.', 'Drexel Hill', 'PA', 19026, '(231) 893-2755');
 
-
+-- Insert Into RoomType Table
 INSERT INTO RoomType (RoomTypeID, `Type`, StandardOccupancy, MaximumOccupancy, BasePrice, ExtraPerson) values 
 	(1, 'Double', 2, 4, 199.99, '10'),
 	(2, 'Double', 2, 4, 174.99, '10'),
@@ -35,7 +40,7 @@ INSERT INTO RoomType (RoomTypeID, `Type`, StandardOccupancy, MaximumOccupancy, B
 	(17, 'Suite', 3, 8, 399.99, '20'),
 	(18, 'Suite', 3, 8, 399.99, '20');
     
-
+-- Insert Into Room Table
 INSERT INTO Room (RoomID, RoomTypeID, RoomNumber, ADA_Accessable) values 
 	(1, 1, 201, 'No'),
 	(2, 2, 202, 'Yes'),
@@ -56,7 +61,7 @@ INSERT INTO Room (RoomID, RoomTypeID, RoomNumber, ADA_Accessable) values
 	(17, 17, 401, 'Yes'),
 	(18, 18, 402, 'Yes');
  
- 
+ -- Insert Into Amenity Table
     INSERT INTO Amenity (AmenityID, RoomTypeID, Microwave, Jacuzzi, Refrigerator, Oven) values 
 	(1, 1, 'True', 'True', 'False', 'False'),
 	(2, 2, 'False', 'False', 'True', 'False'),
@@ -77,7 +82,7 @@ INSERT INTO Room (RoomID, RoomTypeID, RoomNumber, ADA_Accessable) values
 	(17, 17, 'True', 'False', 'True', 'True'),
 	(18, 18, 'True', 'False', 'True', 'True');
 
-
+-- Insert Into Reservation Table
 INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, StartDate, EndDate, TotalCost) values
 	(1,16,2,1,0,'2023-02-02','2023-02-04',299.98),
 	(2,3,3,2,1,'2023-02-05','2023-02-10',999.95),
@@ -106,3 +111,10 @@ INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, Start
 	(25,10,11,2,0,'2023-12-24','2023-12-28',699.96);
 
 
+-- Second, after adding all of the data above, create SQL statements that will delete Jeremiah Pendergrass and his reservations from the database.
+-- Deleting data should start with records that reference Jeremiah Pendergrass using a foreign key and then delete the record from the guest table as the last step.
+-- The scripts should only delete records related to Jeremiah Pendergrass and his reservations. They should not delete any room data.
+
+-- Delete Records for Jeremiah Pendergrass
+DELETE FROM Reservation WHERE GuestID='8';
+DELETE FROM Guest WHERE GuestID='8';
