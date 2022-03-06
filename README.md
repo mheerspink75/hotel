@@ -1,7 +1,5 @@
 **Hotel ERD**
 
----
-
 ![Hotel ERD2](Hotel_ERD2.png)
 
 ---
