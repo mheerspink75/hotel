@@ -103,5 +103,5 @@ INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, Start
 -- The scripts should only delete records related to Jeremiah Pendergrass and his reservations. They should not delete any room data.
 
 -- Delete Records for Jeremiah Pendergrass
--- DELETE FROM Reservation WHERE GuestID='8';
--- DELETE FROM Guest WHERE GuestID='8';
+DELETE FROM Reservation WHERE GuestID='8';
+DELETE FROM Guest WHERE GuestID='8';
