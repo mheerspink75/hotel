@@ -5,6 +5,7 @@
 -- The query itself
 -- The results of the query in a comment under the query
 
+
 -- 1. Write a query that returns a list of reservations that end in July 2023, including the name of the guest, the room number(s), and the reservation dates.
 SELECT firstname,
        lastname,
@@ -13,44 +14,50 @@ SELECT firstname,
        enddate
 FROM   reservation
        INNER JOIN room
-               ON room.roomid = reservation.reservationid
+               ON room.roomid = reservation.roomid
        INNER JOIN guest
                ON guest.guestid = reservation.guestid
 WHERE  enddate BETWEEN '2023-07-01' AND '2023-07-31';
 
 -- Query Results:
--- # firstname	lastname	roomnumber	startdate	enddate
--- Matt	Heerspink	307	2023-06-28	2023-07-02
--- Walter	Holaway	308	2023-07-13	2023-07-14
+# firstname	lastname	roomnumber	startdate	enddate
+-- Matt	Heerspink	205	2023-06-28	2023-07-02
+-- Walter	Holaway	204	2023-07-13	2023-07-14
 -- Wilfred	Vise	401	2023-07-18	2023-07-21
--- Bettyann	Seery	402	2023-07-28	2023-07-29
+-- Bettyann	Seery	303	2023-07-28	2023-07-29
+
 
 
 -- 2. Write a query that returns a list of all reservations for rooms with a jacuzzi, displaying the guest's name, the room number, and the dates of the reservation.
 SELECT firstname,
        lastname,
+       roomnumber,
        startdate,
        enddate,
        jacuzzi
 FROM   reservation
-       INNER JOIN amenity
-               ON amenity.roomtypeid = reservation.roomid
        INNER JOIN room
-               ON room.roomid = reservation.reservationid
+               ON room.roomid = reservation.roomid
        INNER JOIN guest
                ON guest.guestid = reservation.guestid
+       INNER JOIN amenity
+               ON amenity.amenityid = room.roomid
 WHERE  jacuzzi = 'TRUE';
 
 -- Query Results:
--- # firstname	lastname	startdate	enddate	jacuzzi
--- Matt	Heerspink	2023-03-17	2023-03-20	TRUE
--- Matt	Heerspink	2023-06-28	2023-07-02	TRUE
--- Bettyann	Seery	2023-02-05	2023-02-10	TRUE
--- Duane	Cullison	2024-02-22	2023-02-24	TRUE
--- Karie	Yang	2023-03-06	2023-03-07	TRUE
--- Aurore	Lipton	2023-03-18	2023-03-23	TRUE
--- Joleen	Tison	2023-06-10	2023-06-14	TRUE
--- Joleen	Tison	2023-06-10	2023-06-14	TRUE
+# firstname	lastname	roomnumber	startdate	enddate	jacuzzi
+-- Karie	Yang	201	2023-03-06	2023-03-07	TRUE
+-- Bettyann	Seery	203	2023-02-05	2023-02-10	TRUE
+-- Karie	Yang	203	2023-09-13	2023-09-15	TRUE
+-- Matt	Heerspink	205	2023-06-28	2023-07-02	TRUE
+-- Wilfred	Vise	207	2023-04-23	2023-04-24	TRUE
+-- Walter	Holaway	301	2023-04-09	2023-04-13	TRUE
+-- Mack	Simmer	301	2023-11-22	2023-11-25	TRUE
+-- Bettyann	Seery	303	2023-07-28	2023-07-29	TRUE
+-- Duane	Cullison	305	2023-02-22	2023-02-24	TRUE
+-- Bettyann	Seery	305	2023-08-30	2023-09-01	TRUE
+-- Matt	Heerspink	307	2023-03-17	2023-03-20	TRUE
+
 
 
 -- 3. Write a query that returns all the rooms reserved for a specific guest, including the guest's name, the room(s) reserved, the starting date of the reservation, and how many people were included in the reservation. (Choose a guest's name from the existing data.)
@@ -66,8 +73,6 @@ FROM   reservation
                ON guest.guestid = reservation.guestid
        INNER JOIN room
                ON room.roomid = reservation.roomid
-       INNER JOIN roomtype
-	       ON roomtype.roomtypeid = room.roomid
 WHERE  firstname = 'Mack'
        AND lastname = 'Simmer';
        
@@ -86,7 +91,7 @@ SELECT roomnumber,
        totalcost
 FROM   room
        INNER JOIN roomtype
-               ON roomtype.roomtypeid = room.roomid
+               ON roomtype.roomtypeid = room.roomtypeid
        INNER JOIN reservation
                ON reservation.roomid = room.roomid
 ORDER  BY roomnumber;
