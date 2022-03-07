@@ -208,7 +208,7 @@ SELECT firstname,
        address,
        phone
 FROM   guest
-WHERE  phone = '(446) 351-6860';  
+WHERE  phone = '(446)351-6860';  
 
 -- Query Results:
 -- +-----------+----------+---------------+----------------+
