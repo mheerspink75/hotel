@@ -21,6 +21,7 @@ FROM   reservation rv
 WHERE  enddate BETWEEN '2023-07-01' AND '2023-07-31';
 
 -- Query Results:
+-- Question 1=4 Rows, 
 -- +-----------+-----------+------------+------------+------------+
 -- | firstname | lastname  | roomnumber | startdate  | enddate    |
 -- +-----------+-----------+------------+------------+------------+
@@ -50,6 +51,7 @@ FROM   reservation rv
 WHERE  jacuzzi = 1;
 
 -- Query Results:
+-- Question 2= 11 Rows, 
 -- +-----------+-----------+------------+------------+------------+---------+
 -- | firstname | lastname  | roomnumber | startdate  | enddate    | jacuzzi |
 -- +-----------+-----------+------------+------------+------------+---------+
@@ -86,6 +88,7 @@ WHERE  firstname = 'Mack'
        AND lastname = 'Simmer';
        
 -- Query Results:
+-- Question 3= 4 Rows, 
 -- +-----------+----------+------------+--------+----------+------------+--------------+
 -- | firstname | lastname | roomnumber | adults | children | startdate  | total_guests |
 -- +-----------+----------+------------+--------+----------+------------+--------------+
@@ -111,6 +114,8 @@ FROM   room r
 ORDER  BY roomnumber;
 
 -- Query Results:
+-- Question 4=27 rows, 
+-- Returns 27 rows if Jerimiah Pendegrass is not deleted in the DML.
 -- +------------+---------------+-----------+-----------+
 -- | roomnumber | reservationid | baseprice | totalcost |
 -- +------------+---------------+-----------+-----------+
@@ -157,10 +162,12 @@ FROM   room r
        INNER JOIN roomtype rt
                ON rt.roomtypeid = r.roomtypeid
 WHERE  enddate BETWEEN '2023-04-01' AND '2023-04-30'
-       AND maximumoccupancy = 4
+       AND maximumoccupancy >= 3
 ORDER  BY enddate;
 
 -- Query Results:
+-- Question 5 (Let us know in group), 
+-- Returns 2 rooms including room 304 if Jeremiah Pendergrass is not deleted in the DML...
 -- +---------------+------------+------------------+------------+------------+
 -- | reservationid | roomnumber | maximumoccupancy | startdate  | enddate    |
 -- +---------------+------------+------------------+------------+------------+
@@ -183,6 +190,8 @@ ORDER  BY reservations_per_guest DESC,
           lastname;
           
 -- Query Results:
+-- Question 6=12, 
+-- Returns 12 rows if Jeremiah Pendergrass is not deleted in the DML...
 -- +-----------+-------------+------------------------+
 -- | firstname | lastname    | reservations_per_guest |
 -- +-----------+-------------+------------------------+
@@ -211,6 +220,7 @@ FROM   guest
 WHERE  phone = '(446)351-6860';  
 
 -- Query Results:
+-- Question 7=1
 -- +-----------+----------+---------------+----------------+
 -- | firstname | lastname | address       | phone          |
 -- +-----------+----------+---------------+----------------+
