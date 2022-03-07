@@ -19,7 +19,7 @@ PRIMARY KEY (GuestID)
 -- 2. RoomType Table
 CREATE TABLE RoomType (
 RoomTypeID INT AUTO_INCREMENT NOT NULL,
-`Type` VARCHAR(25) NOT NULL,
+`Type` ENUM('Single', 'Double', 'Suite') NOT NULL,
 StandardOccupancy INT NOT NULL,
 MaximumOccupancy INT NOT NULL,
 BasePrice DECIMAL(5,2) NOT NULL,
