@@ -110,7 +110,7 @@ FROM   room
                ON reservation.roomid = room.roomid
 ORDER  BY roomnumber;
 
--- -- Query Results:
+-- Query Results:
 -- +------------+---------------+-----------+-----------+
 -- | roomnumber | reservationid | baseprice | totalcost |
 -- +------------+---------------+-----------+-----------+
@@ -182,7 +182,7 @@ HAVING Count(lastname) >= 1
 ORDER  BY reservations_per_guest DESC,
           lastname;
           
--- -- Query Results:
+-- Query Results:
 -- +-----------+-------------+------------------------+
 -- | firstname | lastname    | reservations_per_guest |
 -- +-----------+-------------+------------------------+
