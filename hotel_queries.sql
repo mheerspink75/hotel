@@ -13,11 +13,11 @@ SELECT firstname,
        roomnumber,
        startdate,
        enddate
-FROM   reservation
-       INNER JOIN room
-               ON room.roomid = reservation.roomid
-       INNER JOIN guest
-               ON guest.guestid = reservation.guestid
+FROM   reservation rv
+       INNER JOIN room r
+               ON r.roomid = rv.roomid
+       INNER JOIN guest g
+               ON g.guestid = rv.guestid
 WHERE  enddate BETWEEN '2023-07-01' AND '2023-07-31';
 
 -- Query Results:
@@ -40,14 +40,14 @@ SELECT firstname,
        startdate,
        enddate,
        jacuzzi
-FROM   reservation
-       INNER JOIN room
-               ON room.roomid = reservation.roomid
-       INNER JOIN guest
-               ON guest.guestid = reservation.guestid
-       INNER JOIN amenity
-               ON amenity.amenityid = room.roomid
-WHERE  jacuzzi = 'TRUE';
+FROM   reservation rv
+       INNER JOIN room r
+               ON r.roomid = rv.roomid
+       INNER JOIN guest g
+               ON g.guestid = rv.guestid
+       INNER JOIN amenity a
+               ON a.amenityid = r.roomid
+WHERE  jacuzzi = 1;
 
 -- Query Results:
 -- +-----------+-----------+------------+------------+------------+
@@ -77,11 +77,11 @@ SELECT firstname,
        children,
        startdate,
        adults + children AS total_guests
-FROM   reservation
-       INNER JOIN guest
-               ON guest.guestid = reservation.guestid
-       INNER JOIN room
-               ON room.roomid = reservation.roomid
+FROM   reservation rv
+       INNER JOIN guest g
+               ON g.guestid = rv.guestid
+       INNER JOIN room r
+               ON r.roomid = rv.roomid
 WHERE  firstname = 'Mack'
        AND lastname = 'Simmer';
        
@@ -103,11 +103,11 @@ SELECT roomnumber,
        reservationid,
        baseprice,
        totalcost
-FROM   room
-       INNER JOIN roomtype
-               ON roomtype.roomtypeid = room.roomtypeid
-       LEFT JOIN reservation
-               ON reservation.roomid = room.roomid
+FROM   room r
+       INNER JOIN roomtype rt
+               ON rt.roomtypeid = r.roomtypeid
+       LEFT JOIN reservation rv
+               ON rv.roomid = r.roomid
 ORDER  BY roomnumber;
 
 -- Query Results:
@@ -151,13 +151,13 @@ SELECT reservationid,
        maximumoccupancy,
        startdate,
        enddate
-FROM   room
-       INNER JOIN reservation
-               ON reservation.roomid = room.roomid
-       INNER JOIN roomtype
-               ON roomtype.roomtypeid = room.roomtypeid
+FROM   room r
+       INNER JOIN reservation rv
+               ON rv.roomid = r.roomid
+       INNER JOIN roomtype rt
+               ON rt.roomtypeid = r.roomtypeid
 WHERE  enddate BETWEEN '2023-04-01' AND '2023-04-30'
-       AND maximumoccupancy = '4'
+       AND maximumoccupancy = 4
 ORDER  BY enddate;
 
 -- Query Results:
@@ -174,9 +174,9 @@ ORDER  BY enddate;
 SELECT firstname,
        lastname,
        Count(lastname) AS reservations_per_guest
-FROM   reservation
-       INNER JOIN guest
-               ON guest.guestid = reservation.guestid
+FROM   reservation rv
+       INNER JOIN guest g
+               ON g.guestid = rv.guestid
 GROUP  BY lastname
 HAVING Count(lastname) >= 1
 ORDER  BY reservations_per_guest DESC,
