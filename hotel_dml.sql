@@ -16,7 +16,7 @@ INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phon
 	(8,'Jeremiah','Pendergrass','70OakwoodSt.','Zion','IL',60099,'(279)491-0960'),
 	(9,'Walter','Holaway','7556ArrowheadSt.','Cumberland','RI',02864,'(446)396-6785'),
 	(10,'Wilfred','Vise','77WestSurreyStreet','Oswego','NY',13126,'(834)727-1001'),
-	(11,'Maritza','Tilton','939LindaRd.','Burke','VA',	22015,'(446)351-6860'),
+	(11,'Maritza','Tilton','939LindaRd.','Burke','VA',22015,'(446)351-6860'),
 	(12,'Joleen','Tison','87QueenSt.','DrexelHill','PA',19026,'(231)893-2755');
 
 -- Insert Into RoomType Table
