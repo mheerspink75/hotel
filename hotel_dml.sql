@@ -12,7 +12,7 @@ INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phon
 	(4,'Duane','Cullison','9662 Foxrun Lane','Harlingen','TX',78552,'(308)494-0198'),
 	(5,'Karie','Yang','9378 W. Augusta Ave.','West Deptford','NJ',08096,'(214)730-0298'),
 	(6,'Aurore','Lipton','762 Wild Rose Street','Saginaw','MI',48601,'(377)507-0974'),
-	(7,'Zachery','Luechtefeld','7Poplar Dr.','Arvada','CO',80003,'(814)485-2615'),
+	(7,'Zachery','Luechtefeld','7 Poplar Dr.','Arvada','CO',80003,'(814)485-2615'),
 	(8,'Jeremiah','Pendergrass','70 Oakwood St.','Zion','IL',60099,'(279)491-0960'),
 	(9,'Walter','Holaway','7556 Arrowhead St.','Cumberland','RI',02864,'(446)396-6785'),
 	(10,'Wilfred','Vise','77 West Surrey Street','Oswego','NY',13126,'(834)727-1001'),
