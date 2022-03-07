@@ -21,72 +21,60 @@ INSERT INTO Guest (GuestID, FirstName, LastName, Address, City, State, Zip, Phon
 
 -- Insert Into RoomType Table
 INSERT INTO RoomType (RoomTypeID, `Type`, StandardOccupancy, MaximumOccupancy, BasePrice, ExtraPerson) values 
-	(1, 'Double', 2, 4, 199.99, '10'),
-	(2, 'Double', 2, 4, 174.99, '10'),
-	(3, 'Double', 2, 4, 199.99, '10'),
-	(4, 'Double', 2, 4, 174.99, '10'),
-	(5, 'Single', 2, 2, 174.99, 'NA'),
-	(6, 'Single', 2, 2, 149.99, 'NA'),
-	(7, 'Single', 2, 2, 174.99, 'NA'),
-	(8, 'Single', 2, 2, 149.99, 'NA'),
-	(9, 'Double', 2, 4, 199.99, '10'),
-	(10, 'Double', 2, 4, 174.99, '10'),
-	(11, 'Double', 2, 4, 199.99, '10'),
-	(12, 'Double', 2, 4, 174.99, '10'),
-	(13, 'Double', 2, 2, 174.99, 'NA'),
-	(14, 'Single', 2, 2, 149.99, 'NA'),
-	(15, 'Single', 2, 2, 174.99, 'NA'),
-	(16, 'Single', 2, 2, 149.99, 'NA'),
-	(17, 'Suite', 3, 8, 399.99, '20'),
-	(18, 'Suite', 3, 8, 399.99, '20');
+	(1, 2, 2, 4, 199.99, 1),
+	(2, 2, 2, 4, 174.99, 1),
+	(3, 1, 2, 2, 174.99, 3),
+	(4, 1, 2, 2, 149.99, 3),
+	(5, 2, 2, 2, 174.99, 3),
+	(6, 3, 3, 8, 399.99, 2);
     
 -- Insert Into Room Table
 INSERT INTO Room (RoomID, RoomTypeID, RoomNumber, ADA_Accessable) values 
-	(1, 1, 201, 'No'),
-	(2, 2, 202, 'Yes'),
-	(3, 3, 203, 'No'),
-	(4, 4, 204, 'Yes'),
-	(5, 5, 205, 'No'),
-	(6, 6, 206, 'Yes'),
-	(7, 7, 207, 'No'),
-	(8, 8, 208, 'Yes'),
-	(9, 9, 301, 'No'),
-	(10, 10, 302, 'Yes'),
-	(11, 11, 303, 'No'),
-	(12, 12, 304, 'Yes'),
-	(13, 13, 305, 'No'),
-	(14, 14, 306, 'Yes'),
-	(15, 15, 307, 'No'),
-	(16, 16, 308, 'Yes'),
-	(17, 17, 401, 'Yes'),
-	(18, 18, 402, 'Yes');
+	(1, 1, 201, 2),
+	(2, 2, 202, 1),
+	(3, 1, 203, 2),
+	(4, 2, 204, 1),
+	(5, 3, 205, 2),
+	(6, 4, 206, 1),
+	(7, 3, 207, 2),
+	(8, 4, 208, 1),
+	(9, 1, 301, 2),
+	(10, 2, 302, 1),
+	(11, 1, 303, 2),
+	(12, 2, 304, 1),
+	(13, 3, 305, 2),
+	(14, 4, 306, 1),
+	(15, 3, 307, 2),
+	(16, 4, 308, 1),
+	(17, 6, 401, 1),
+	(18, 6, 402, 1);
  
- -- Insert Into Amenity Table
-    INSERT INTO Amenity (AmenityID, RoomTypeID, Microwave, Jacuzzi, Refrigerator, Oven) values 
-	(1, 1, 'True', 'True', 'False', 'False'),
-	(2, 2, 'False', 'False', 'True', 'False'),
-	(3, 3, 'True', 'True', 'False', 'False'),
-	(4, 4, 'False', 'False', 'True', 'False'),
-	(5, 5, 'True', 'True', 'True', 'False'),
-	(6, 6, 'True', 'True', 'False', 'False'),
-	(7, 7, 'True', 'False', 'True', 'False'),
-	(8, 8, 'True', 'True', 'False', 'False'),
-	(9, 9, 'False', 'False', 'True', 'False'),
-	(10, 10, 'True', 'True', 'False', 'False'),
-	(11, 11, 'False', 'False', 'True', 'False'),
-	(12, 12, 'False', 'False', 'True', 'False'),
-	(13, 13, 'True', 'True', 'True', 'False'),
-	(14, 14, 'True', 'False', 'True', 'False'),
-	(15, 15, 'True', 'True', 'True', 'False'),
-	(16, 16, 'True', 'False', 'True', 'False'),
-	(17, 17, 'True', 'False', 'True', 'True'),
-	(18, 18, 'True', 'False', 'True', 'True');
+     -- Insert Into Amenity Table
+INSERT INTO Amenity (AmenityID, RoomTypeID, Microwave, Jacuzzi, Refrigerator, Oven) values 
+	(1, 1, 1, 1, 2, 2),
+	(2, 2, 2, 2, 1, 2),
+	(3, 1, 1, 1, 2, 2),
+	(4, 2, 2, 2, 1, 2),
+	(5, 3, 1, 1, 1, 2),
+	(6, 4, 1, 2, 1, 2),
+	(7, 3, 1, 1, 1, 2),
+	(8, 4, 1, 2, 1, 2),
+	(9, 1, 1, 1, 2, 2),
+	(10, 2, 2, 2, 1, 2),
+	(11, 1, 1, 1, 2, 2),
+	(12, 2, 2, 2, 1, 2),
+	(13, 3, 1, 1, 1, 2),
+	(14, 4, 1, 2, 1, 2),
+	(15, 3, 1, 1, 1, 2),
+	(16, 4, 1, 2, 1, 2),
+	(17, 6, 1, 2, 1, 1),
+	(18, 6, 1, 2, 1, 1);
 
 -- Insert Into Reservation Table
 INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, StartDate, EndDate, TotalCost) values
 	(1,16,2,1,0,'2023-02-02','2023-02-04',299.98),
 	(2,3,3,2,1,'2023-02-05','2023-02-10',999.95),
-	(3,13,4,2,0,'2024-02-22','2023-02-24',349.98),
+	(3,13,4,2,0,'2023-02-22','2023-02-24',349.98),
 	(4,1,5,2,2,'2023-03-06','2023-03-07',199.99),
 	(5,15,1,1,1,'2023-03-17','2023-03-20',524.97),
 	(6,10,6,3,0,'2023-03-18','2023-03-23',924.95),
@@ -109,7 +97,6 @@ INSERT INTO Reservation (ReservationID, RoomID, GuestID, Adults, Children, Start
 	(23,6,2,2,0,'2023-11-22','2023-11-25',449.97),
 	(24,9,2,2,2,'2023-11-22','2023-11-25',599.97),
 	(25,10,11,2,0,'2023-12-24','2023-12-28',699.96);
-
 
 -- Second, after adding all of the data above, create SQL statements that will delete Jeremiah Pendergrass and his reservations from the database.
 -- Deleting data should start with records that reference Jeremiah Pendergrass using a foreign key and then delete the record from the guest table as the last step.
